@@ -17,3 +17,4 @@ Route::get('/', function () {
     return view('layout');
 });
 Route::resource('/students', StudentController::class);
+Route::resource('/testview', StudentController::class);
