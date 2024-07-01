@@ -5,18 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use illuminate\Http\Response;
 use illuminate\Http\RedirectResponse;
-use App\Models\Student;
+use App\Models\Teacher;
 use Illuminate\view\View;
 
-class StudentController extends Controller
+class TeacherController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index(): View
     {
-        $students = Student::all();
-        return view('students.index')->with('students', $students);
+        $Teachers = Teacher::all();
+        return view('teachers.index')->with('teachers', $Teachers);
     }
 
     /**
@@ -24,7 +24,7 @@ class StudentController extends Controller
      */
     public function create() : View
     {
-        return view('students.create');
+        return view('teachers.create');
     }
 
     /**
@@ -33,8 +33,8 @@ class StudentController extends Controller
     public function store(Request $request) : RedirectResponse
     {
         $input = $request->all();
-        Student::create($input);
-        return redirect('students')->with('flash_message', 'Student Addedd!');  
+        Teacher::create($input);
+        return redirect('teachers')->with('flash_message', 'Teacher Addedd!');  
     }
 
     /**
@@ -42,16 +42,16 @@ class StudentController extends Controller
      */
     public function show( $id): View
     {
-        $students = Student::find($id);
-        return view('students.show')->with('students', $students);
+        $Teachers = Teacher::find($id);
+        return view('teachers.show')->with('teachers', $Teachers);
     }
     /**
      * Show the form for editing the specified resource.
      */
     public function edit( $id) : View
     {
-        $students = Student::find($id);
-        return view('students.edit')->with('student', $students);
+        $Teachers = Teacher::find($id);
+        return view('teachers.edit')->with('teacher', $Teachers);
     }
 
     /**
@@ -59,10 +59,10 @@ class StudentController extends Controller
      */
     public function update(Request $request, string $id) : RedirectResponse
     {
-        $students = Student::find($id);
+        $Teachers = Teacher::find($id);
         $input = $request->all();
-        $students->update($input);
-        return redirect('students')->with('flash_message', 'student Updated!'); 
+        $Teachers->update($input);
+        return redirect('teachers')->with('flash_message', 'Teacher Updated!'); 
     }
 
     /**
@@ -70,7 +70,7 @@ class StudentController extends Controller
      */
     public function destroy(string $id) : RedirectResponse
     {
-        Student::destroy($id);
-        return redirect('students')->with('flash_message', 'Student deleted!'); 
+        Teacher::destroy($id);
+        return redirect('teachers')->with('flash_message', 'Teacher deleted!'); 
     }
 }
