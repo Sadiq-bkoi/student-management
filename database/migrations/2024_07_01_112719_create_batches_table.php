@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('batches', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedBigInteger('Course_id');
-            $table->date('Start_date');
-            $table->foreign('Course_id')->references('id')->on('courses')->onDelete('cascade');
+            $table->unsignedBigInteger('course_id');
+            $table->date('start_date');
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
             $table->timestamps();
         });
     }
