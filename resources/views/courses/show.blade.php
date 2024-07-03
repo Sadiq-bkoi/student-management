@@ -8,9 +8,9 @@
    
     {{-- {{dd($course)}}; --}}
         <div class="card-body">
-        <h5 class="card-title">Name : {{ $courses->name }}</h5>
-        <p class="card-text">Address : {{ $courses->address }}</p>
-        <p class="card-text">Mobile : {{ $courses->mobile }}</p>
+        <h5 class="card-title">Name : {{ $Courses->name }}</h5>
+        <p class="card-text">Address : {{ $Courses->syllabus }}</p>
+        <p class="card-text">Mobile : {{ $Courses->duration() }}</p>
   </div>
        
     </hr>

@@ -51,7 +51,7 @@ class CourseController extends Controller
     public function edit( $id) : View
     {
         $Courses = Course::find($id);
-        return view('courses.edit')->with('Course', $Courses);
+        return view('courses.edit')->with('Courses', $Courses);
     }
 
     /**

@@ -11,8 +11,10 @@
             <label>Course</label></br>
             {{-- <input type="text" name="course_id" id="course_id" class="form-control"></br> --}}
             <select name="course_id" id="course_id" class="form-control">
-                @foreach ($courses as $id => $name)
-                    <option value="{{ $id }}">{{ $name }}</option>
+                {{-- @foreach ($courses as $id => $name) --}}
+                    {{-- <option value="{{ $id }}">{{ $name }}</option> --}}
+                @foreach ($courses as $course)
+                    <option value="{{ $course->id }}">{{ $course->name }}</option>
                 @endforeach
             </select>
             <label>Start Date</label></br>
